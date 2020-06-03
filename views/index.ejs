@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css"   href="/css/style.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	</head>
+
+	<body onload="enableEditMode();">
+		<div class="navbar">
+			<a href="javascript:void(0)" onclick="format('bold')"><span class="fa fa-bold fa-fw"></span></a>
+			<a href="javascript:void(0)" onclick="format('italic')"><span class="fa fa-italic fa-fw"></span></a>
+			<a href="javascript:void(0)" onclick="format('underline')"><span class="fas fa-underline"></span></a>
+			<a href="javascript:void(0)" onclick="format('strikeThrough')"><span class="fas fa-strikethrough"></span></a>
+			<a href="javascript:void(0)" onclick="format('justifyLeft')"><span class="fas fa-align-left"></span></a>
+			<a href="javascript:void(0)" onclick="format('justifyCenter')"><span class="fas fa-align-center"></span></a>
+			<a href="javascript:void(0)" onclick="format('justifyRight')"><span class="fas fa-align-right"></span></a>
+			<a href="javascript:void(0)" onclick="format('cut')"><span class="fa fa-cut"></span></a>
+			<a href="javascript:void(0)" onclick="format('copy')"><span class="fa fa-copy"></span></a>
+			<a href="javascript:void(0)" onclick="format('indent')"><span class="fas fa-indent"></span></a>
+			<a href="javascript:void(0)" onclick="format('outdent')"><span class="fas fa-outdent"></span></a>
+			<a href="javascript:void(0)" onclick="format('subscript')"><span class="fas fa-subscript"></span></a>
+			<a href="javascript:void(0)" onclick="format('superscript')"><span class="fas fa-subscript"></span></a>
+			<a href="javascript:void(0)" onclick="format('undo')"><span class="fas fa-undo"></span></a>
+			<a href="javascript:void(0)" onclick="format('redo')"><span class="fas fa-redo"></span></a>
+			<a href="javascript:void(0)" onclick="format('insertOrderedList')"><span class="fa fa-italic fa-fw"></span></a>
+			<a href="javascript:void(0)" onclick="format('insertUnorderedList')"><span class="fa fa-list fa-fw"></span></a>
+			<div class="dropdown">
+			  <button class="dropbtn">
+			  	<i class="fas fa-text-height"></i>
+			  </button>
+			  <div class="dropdown-content">
+			    <a href="javascript:void(0)" onclick="format('fontsize', '5')">5</a>
+			    <a href="javascript:void(0)" onclick="format('fontsize', '6')">6</a>
+			    <a href="javascript:void(0)" onclick="format('fontsize', '8')">8</a>
+			    <a href="javascript:void(0)" onclick="format('fontsize', '10')">10</a>
+			    <a href="javascript:void(0)" onclick="format('fontsize', '12')">12</a>
+			    <a href="javascript:void(0)" onclick="format('fontsize', '14')">14</a>
+			  </div>
+		</div>
+			<div class="dropdown">
+			  <button class="dropbtn">
+			  	<i class="fas fa-font"></i>
+			  </button>
+			  <div class="dropdown-content">
+			    <a href="javascript:void(0)" onclick="format('fontName', 'Arial')">Arial</a>
+			    <a href="javascript:void(0)" onclick="format('fontName', 'Comic Sans MS')">Comic Sans MS</a>
+			    <a href="javascript:void(0)" onclick="format('fontName', 'Courier')">Courier</a>
+			    <a href="javascript:void(0)" onclick="format('fontName', 'Georgia')">Georgia</a>
+			    <a href="javascript:void(0)" onclick="format('fontName', 'Tahoma')">Tahoma</a>
+			    <a href="javascript:void(0)" onclick="format('fontName', 'Times New Roman')">Times New Roman</a>
+			    <a href="javascript:void(0)" onclick="format('fontName', 'Verdana')">Verdana</a>
+			  </div>
+			</div>
+
+			<a href="javascript:void(0)" onclick="format('insertImage', prompt('URL da imagem:', ''));"><i class="fas fa-images"></i></a>
+		</div>
+			<iframe name="richTextField" style="height:100%;width:100%;border:none;"></iframe>
+			<script>
+				function format(command, value) {
+					richTextField.document.execCommand(command, false, value);
+				}
+
+				function enableEditMode() {
+					richTextField.document.designMode = 'on';
+				}
+			</script>
+	</body>
+</html>
